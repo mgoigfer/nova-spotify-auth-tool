@@ -1,13 +1,21 @@
 {
   "name": "mgoigfer/nova-spotify-auth-tool",
-  "description": "A Laravel Nova tool.",
+  "description": "A Spotify auth tool to use in your Laravel Nova apps.",
   "keywords": [
     "laravel",
-    "nova"
+    "nova",
+    "spotify"
+  ],
+  "authors": [
+    {
+      "name": "Mikel Goig",
+      "email": "m@mikelgoig.com"
+    }
   ],
   "license": "MIT",
   "require": {
-    "php": ">=7.1.0"
+    "php": ">=7.1.0",
+    "jwilsson/spotify-web-api-php": "^2.6"
   },
   "autoload": {
     "psr-4": {

@@ -2,11 +2,12 @@
 
 namespace Mgoigfer\NovaSpotifyAuthTool;
 
-use Laravel\Nova\Nova;
-use Laravel\Nova\Events\ServingNova;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
+use Laravel\Nova\Events\ServingNova;
+use Laravel\Nova\Nova;
 use Mgoigfer\NovaSpotifyAuthTool\Http\Middleware\Authorize;
+use SpotifyWebAPI\Session;
 
 class ToolServiceProvider extends ServiceProvider
 {
@@ -40,8 +41,12 @@ class ToolServiceProvider extends ServiceProvider
         }
 
         Route::middleware(['nova', Authorize::class])
-                ->prefix('nova-vendor/nova-spotify-auth-tool')
-                ->group(__DIR__.'/../routes/api.php');
+            ->prefix('nova-vendor/nova-spotify-auth-tool')
+            ->group(__DIR__.'/../routes/web.php');
+
+        Route::middleware(['nova', Authorize::class])
+            ->prefix('nova-vendor/nova-spotify-auth-tool')
+            ->group(__DIR__.'/../routes/api.php');
     }
 
     /**
@@ -51,6 +56,12 @@ class ToolServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        //
+        $this->app->bind(Session::class, function ($app, $parameters) {
+            return new Session(
+                config('services.spotify.client_id'),
+                config('services.spotify.client_secret'),
+                $parameters['callback']
+            );
+        });
     }
 }
