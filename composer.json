@@ -3,7 +3,6 @@
   "description": "A Spotify auth tool to use in your Laravel Nova apps.",
   "keywords": [
     "laravel",
-    "php",
     "nova",
     "spotify",
     "package"
