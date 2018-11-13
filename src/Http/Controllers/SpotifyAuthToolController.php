@@ -14,23 +14,23 @@ class SpotifyAuthToolController extends Controller
      */
     public function auth()
     {
-        $spotify = app()->make('Spotify', [
+        $spotify = app()->make('SpotifyWrapper', [
             'callback' => '/nova-vendor/nova-spotify-auth-tool/auth',
             'scope' => [],
         ]);
 
-        // $refresh_token = $spotify->requestRefreshToken();
+        $refresh_token = $spotify->requestRefreshToken();
 
-        // if (DB::table('spotify')->where('key', "refresh_token")->first()) {
-        //     DB::table('spotify')->where('key', "refresh_token")->update([
-        //         'value' => $refresh_token,
-        //     ]);
-        // } else {
-        //     DB::table('spotify')->insert([
-        //         'key' => "refresh_token",
-        //         'value' => $refresh_token,
-        //     ]);
-        // }
+        if (DB::table('spotify')->where('key', "refresh_token")->first()) {
+            DB::table('spotify')->where('key', "refresh_token")->update([
+                'value' => $refresh_token,
+            ]);
+        } else {
+            DB::table('spotify')->insert([
+                'key' => "refresh_token",
+                'value' => $refresh_token,
+            ]);
+        }
 
         return redirect('nova/nova-spotify-auth-tool');
     }
