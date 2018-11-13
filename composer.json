@@ -19,12 +19,12 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "mgoigfer/laravel-spotify-web-api": "@dev"
+    "mgoigfer/laravel-spotify-wrapper": "@dev"
   },
   "repositories": [
     {
       "type": "path",
-      "url": "~/code/packages/laravel-spotify-web-api"
+      "url": "~/code/packages/laravel-spotify-wrapper"
     }
   ],
   "autoload": {
