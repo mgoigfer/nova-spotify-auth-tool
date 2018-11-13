@@ -1,8 +1,8 @@
 <?php
 
-namespace Mgoigfer\NovaSpotifyAuthTool\Http\Middleware;
+namespace Mgoigfer\SpotifyAuthTool\Http\Middleware;
 
-use Mgoigfer\NovaSpotifyAuthTool\NovaSpotifyAuthTool;
+use Mgoigfer\SpotifyAuthTool\SpotifyAuthTool;
 
 class Authorize
 {
@@ -15,6 +15,6 @@ class Authorize
      */
     public function handle($request, $next)
     {
-        return resolve(NovaSpotifyAuthTool::class)->authorize($request) ? $next($request) : abort(403);
+        return resolve(SpotifyAuthTool::class)->authorize($request) ? $next($request) : abort(403);
     }
 }

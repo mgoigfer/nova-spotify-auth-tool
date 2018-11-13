@@ -1,14 +1,14 @@
 <?php
 
-namespace Mgoigfer\NovaSpotifyAuthTool;
+namespace Mgoigfer\SpotifyAuthTool;
 
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Nova\Events\ServingNova;
 use Laravel\Nova\Nova;
-use Mgoigfer\NovaSpotifyAuthTool\Http\Middleware\Authorize;
+use Mgoigfer\SpotifyAuthTool\Http\Middleware\Authorize;
 
-class ToolServiceProvider extends ServiceProvider
+class SpotifyAuthToolServiceProvider extends ServiceProvider
 {
     /**
      * Bootstrap any application services.

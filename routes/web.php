@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use Mgoigfer\NovaSpotifyAuthTool\Http\Controllers\SpotifyAuthController;
+use Mgoigfer\SpotifyAuthTool\Http\Controllers\SpotifyAuthToolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -14,4 +14,4 @@ use Mgoigfer\NovaSpotifyAuthTool\Http\Controllers\SpotifyAuthController;
 |
 */
 
-Route::get('/auth', SpotifyAuthController::class.'@auth');
+Route::get('/auth', SpotifyAuthToolController::class.'@auth');

@@ -29,13 +29,13 @@
   ],
   "autoload": {
     "psr-4": {
-      "Mgoigfer\\NovaSpotifyAuthTool\\": "src/"
+      "Mgoigfer\\SpotifyAuthTool\\": "src/"
     }
   },
   "extra": {
     "laravel": {
       "providers": [
-        "Mgoigfer\\NovaSpotifyAuthTool\\ToolServiceProvider"
+        "Mgoigfer\\SpotifyAuthTool\\SpotifyAuthToolServiceProvider"
       ]
     }
   },

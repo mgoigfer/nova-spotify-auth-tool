@@ -1,6 +1,6 @@
 <template>
   <div>
-    <heading class="mb-6">Nova Spotify Auth Tool</heading>
+    <heading class="mb-6">Spotify Auth</heading>
 
     <a href="/nova-vendor/nova-spotify-auth-tool/auth">
       Obtener Spotify refresh token

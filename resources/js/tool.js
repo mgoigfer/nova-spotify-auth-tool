@@ -3,7 +3,7 @@ Nova.booting((Vue, router) => {
         {
             name: 'nova-spotify-auth-tool',
             path: '/nova-spotify-auth-tool',
-            component: require('./components/Tool'),
+            component: require('./components/NovaSpotifyAuthTool'),
         },
     ])
 })

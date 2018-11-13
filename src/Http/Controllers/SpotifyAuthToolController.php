@@ -1,11 +1,11 @@
 <?php
 
-namespace Mgoigfer\NovaSpotifyAuthTool\Http\Controllers;
+namespace Mgoigfer\SpotifyAuthTool\Http\Controllers;
 
 use DB;
 use Illuminate\Routing\Controller;
 
-class SpotifyAuthController extends Controller
+class SpotifyAuthToolController extends Controller
 {
     /**
      * Spotify authentication.

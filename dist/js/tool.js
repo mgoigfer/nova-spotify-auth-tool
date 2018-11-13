@@ -68,7 +68,7 @@
 /***/ (function(module, exports, __webpack_require__) {
 
 __webpack_require__(1);
-module.exports = __webpack_require__(11);
+module.exports = __webpack_require__(6);
 
 
 /***/ }),
@@ -88,11 +88,11 @@ Nova.booting(function (Vue, router) {
 /***/ (function(module, exports, __webpack_require__) {
 
 var disposed = false
-var normalizeComponent = __webpack_require__(8)
+var normalizeComponent = __webpack_require__(3)
 /* script */
-var __vue_script__ = __webpack_require__(9)
+var __vue_script__ = __webpack_require__(4)
 /* template */
-var __vue_template__ = __webpack_require__(10)
+var __vue_template__ = __webpack_require__(5)
 /* template functional */
 var __vue_template_functional__ = false
 /* styles */
@@ -109,7 +109,7 @@ var Component = normalizeComponent(
   __vue_scopeId__,
   __vue_module_identifier__
 )
-Component.options.__file = "resources/js/components/Tool.vue"
+Component.options.__file = "resources/js/components/NovaSpotifyAuthTool.vue"
 
 /* hot reload */
 if (false) {(function () {
@@ -118,9 +118,9 @@ if (false) {(function () {
   if (!hotAPI.compatible) return
   module.hot.accept()
   if (!module.hot.data) {
-    hotAPI.createRecord("data-v-68ff5483", Component.options)
+    hotAPI.createRecord("data-v-48923953", Component.options)
   } else {
-    hotAPI.reload("data-v-68ff5483", Component.options)
+    hotAPI.reload("data-v-48923953", Component.options)
   }
   module.hot.dispose(function (data) {
     disposed = true
@@ -131,12 +131,7 @@ module.exports = Component.exports
 
 
 /***/ }),
-/* 3 */,
-/* 4 */,
-/* 5 */,
-/* 6 */,
-/* 7 */,
-/* 8 */
+/* 3 */
 /***/ (function(module, exports) {
 
 /* globals __VUE_SSR_CONTEXT__ */
@@ -245,7 +240,7 @@ module.exports = function normalizeComponent (
 
 
 /***/ }),
-/* 9 */
+/* 4 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -266,7 +261,7 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 });
 
 /***/ }),
-/* 10 */
+/* 5 */
 /***/ (function(module, exports, __webpack_require__) {
 
 var render = function() {
@@ -276,9 +271,7 @@ var render = function() {
   return _c(
     "div",
     [
-      _c("heading", { staticClass: "mb-6" }, [
-        _vm._v("Nova Spotify Auth Tool")
-      ]),
+      _c("heading", { staticClass: "mb-6" }, [_vm._v("Spotify Auth")]),
       _vm._v(" "),
       _c("a", { attrs: { href: "/nova-vendor/nova-spotify-auth-tool/auth" } }, [
         _vm._v("\n    Obtener Spotify refresh token\n  ")
@@ -293,12 +286,12 @@ module.exports = { render: render, staticRenderFns: staticRenderFns }
 if (false) {
   module.hot.accept()
   if (module.hot.data) {
-    require("vue-hot-reload-api")      .rerender("data-v-68ff5483", module.exports)
+    require("vue-hot-reload-api")      .rerender("data-v-48923953", module.exports)
   }
 }
 
 /***/ }),
-/* 11 */
+/* 6 */
 /***/ (function(module, exports) {
 
 // removed by extract-text-webpack-plugin

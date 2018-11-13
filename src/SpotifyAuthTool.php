@@ -1,11 +1,11 @@
 <?php
 
-namespace Mgoigfer\NovaSpotifyAuthTool;
+namespace Mgoigfer\SpotifyAuthTool;
 
 use Laravel\Nova\Nova;
 use Laravel\Nova\Tool;
 
-class NovaSpotifyAuthTool extends Tool
+class SpotifyAuthTool extends Tool
 {
     /**
      * Perform any tasks that need to happen when the tool is booted.
