@@ -1,4 +1,4 @@
-# Laravel Nova Spotifu Auth Tool
+# Laravel Nova Spotify Auth Tool
 
 [![Latest Version on Packagist](https://img.shields.io/packagist/v/mgoigfer/nova-spotify-auth-tool.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/nova-spotify-auth-tool)
 [![Build Status](https://img.shields.io/travis/mgoigfer/nova-spotify-auth-tool/master.svg?style=flat-square)](https://travis-ci.org/mgoigfer/nova-spotify-auth-tool)

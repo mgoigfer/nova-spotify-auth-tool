@@ -1,40 +1,40 @@
 {
-  "name": "mgoigfer/nova-spotify-auth-tool",
-  "description": "A Spotify auth tool to use in your Laravel Nova apps.",
-  "keywords": [
-    "laravel",
-    "nova",
-    "spotify",
-    "package"
-  ],
-  "homepage": "https://github.com/mgoigfer/nova-spotify-auth-tool",
-  "license": "MIT",
-  "type": "package",
-  "authors": [
-    {
-      "name": "Mikel Goig",
-      "email": "m@mikelgoig.com"
-    }
-  ],
-  "require": {
-    "php": ">=7.1.0",
-    "mgoigfer/laravel-spotify-wrapper": "*"
-  },
-  "autoload": {
-    "psr-4": {
-      "Mgoigfer\\SpotifyAuthTool\\": "src/"
-    }
-  },
-  "extra": {
-    "laravel": {
-      "providers": [
-        "Mgoigfer\\SpotifyAuthTool\\SpotifyAuthToolServiceProvider"
-      ]
-    }
-  },
-  "config": {
-    "sort-packages": true
-  },
-  "minimum-stability": "dev",
-  "prefer-stable": true
+    "name": "mgoigfer/nova-spotify-auth-tool",
+    "description": "A Spotify auth tool to use in your Laravel Nova apps.",
+    "keywords": [
+        "laravel",
+        "nova",
+        "spotify",
+        "package"
+    ],
+    "homepage": "https://github.com/mgoigfer/nova-spotify-auth-tool",
+    "license": "MIT",
+    "type": "package",
+    "authors": [
+        {
+            "name": "Mikel Goig",
+            "email": "m@mikelgoig.com"
+        }
+    ],
+    "require": {
+        "php": ">=7.1.0",
+        "mgoigfer/laravel-spotify-wrapper": "*"
+    },
+    "autoload": {
+        "psr-4": {
+            "Mgoigfer\\SpotifyAuthTool\\": "src/"
+        }
+    },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Mgoigfer\\SpotifyAuthTool\\SpotifyAuthToolServiceProvider"
+            ]
+        }
+    },
+    "config": {
+        "sort-packages": true
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true
 }
