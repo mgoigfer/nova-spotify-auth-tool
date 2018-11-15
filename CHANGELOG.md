@@ -2,6 +2,10 @@
 
 All notable changes to `nova-spotify-auth-tool` will be documented in this file.
 
+## 0.1.3 - 2018-11-15
+
+- Minor changes.
+
 ## 0.1.2 - 2018-11-15
 
 - Fix database migrations.
