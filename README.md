@@ -5,13 +5,21 @@
 [![Quality Score](https://img.shields.io/scrutinizer/g/mgoigfer/nova-spotify-auth-tool.svg?style=flat-square)](https://scrutinizer-ci.com/g/mgoigfer/nova-spotify-auth-tool)
 [![Total Downloads](https://img.shields.io/packagist/dt/mgoigfer/nova-spotify-auth-tool.svg?style=flat-square)](https://packagist.org/packages/mgoigfer/nova-spotify-auth-tool)
 
-This [Nova](https://nova.laravel.com/) tool adds a Spotify auth section to the Nova Sidebar.
+This [Nova](https://nova.laravel.com/) tool adds a Spotify auth section to the Nova Sidebar. Under the hood it uses the [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) package.
 
 You can authenticate yourself through Spotify API and store a refresh token to your database.
 
+![Laravel Nova Spotify Auth Tool](./docs/screenshot.png)
+
+## Requirements
+
+This Nova tool requires MySQL 5.7.8 or higher.
+
 ## Installation
 
-You can install the package via [Composer](https://getcomposer.org/):
+First, you must install [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) into your Laravel app.
+
+Next, you can install this package via [Composer](https://getcomposer.org/):
 
 ```bash
 composer require mgoigfer/nova-spotify-auth-tool
@@ -28,7 +36,13 @@ public function tools()
 }
 ```
 
-### Changelog
+Run the database migrations:
+
+```bash
+php artisan migrate
+```
+
+## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
