@@ -18,14 +18,8 @@
   ],
   "require": {
     "php": ">=7.1.0",
-    "mgoigfer/laravel-spotify-wrapper": "@dev"
+    "mgoigfer/laravel-spotify-wrapper": "*"
   },
-  "repositories": [
-    {
-      "type": "path",
-      "url": "~/code/packages/laravel-spotify-wrapper"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Mgoigfer\\SpotifyAuthTool\\": "src/"

@@ -1,10 +1,7 @@
-/.idea
-/vendor
 /node_modules
+/vendor
 .DS_Store
 .phpunit.result.cache
 package-lock.json
-composer.phar
 composer.lock
-phpunit.xml
-Thumbs.db
+composer.phar
