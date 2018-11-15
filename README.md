@@ -11,10 +11,6 @@ You can authenticate yourself through Spotify API and store a refresh token to y
 
 ![Laravel Nova Spotify Auth Tool](./docs/screenshot.png)
 
-## Requirements
-
-This Nova tool requires MySQL 5.7.8 or higher.
-
 ## Installation
 
 First, you must install [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) into your Laravel app.
