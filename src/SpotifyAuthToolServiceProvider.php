@@ -17,7 +17,11 @@ class SpotifyAuthToolServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        $this->loadMigrationsFrom(__DIR__.'/../database/migrations/2018_11_15_000000_create_spotify_table.php');
+        if ($this->app->runningInConsole()) {
+            $this->publishes([
+                __DIR__.'/../database/migrations/2018_11_15_000000_create_spotify_table.php' => database_path('migrations/2018_11_15_000000_create_spotify_table.php'),
+            ], 'migrations');
+        }
 
         $this->loadViewsFrom(__DIR__.'/../resources/views', 'nova-spotify-auth-tool');
 

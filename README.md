@@ -36,9 +36,11 @@ public function tools()
 }
 ```
 
-Run the database migrations:
+Publish and run the application migrations:
 
 ```bash
+php artisan vendor:publish --provider="Mgoigfer\SpotifyAuthTool\SpotifyAuthToolServiceProvider"
+
 php artisan migrate
 ```
 
