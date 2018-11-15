@@ -14,8 +14,8 @@ class SpotifyAuthToolApiController extends Controller
      */
     public function getRefreshToken()
     {
-        $refresh_token = DB::table(config('spotify.database_table'))->where('key', 'refresh_token')->exists()
-            ? DB::table(config('spotify.database_table'))->where('key', 'refresh_token')->first()->value
+        $refresh_token = DB::table('spotify')->where('key', 'refresh_token')->exists()
+            ? DB::table('spotify')->where('key', 'refresh_token')->first()->value
             : '';
 
         return response()->json($refresh_token);
