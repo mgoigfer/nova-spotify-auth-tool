@@ -13,15 +13,15 @@ You can authenticate yourself through Spotify API and store a refresh token to y
 
 ## Installation
 
-First, you must install [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) into your Laravel app.
+1. You must install [mgoigfer/laravel-spotify-wrapper](https://github.com/mgoigfer/laravel-spotify-wrapper) into your Laravel app.
 
-Next, you can install this package via [Composer](https://getcomposer.org/):
+2. You can install this package via [Composer](https://getcomposer.org/):
 
 ```bash
 composer require mgoigfer/nova-spotify-auth-tool
 ```
 
-Register the tool in `app/Providers/NovaServiceProvider`:
+3. Register the tool in `app/Providers/NovaServiceProvider`:
 
 ```php
 public function tools()
@@ -32,12 +32,18 @@ public function tools()
 }
 ```
 
-Publish and run the application migrations:
+4. Publish and run the application migrations:
 
 ```bash
 php artisan vendor:publish --provider="Mgoigfer\SpotifyAuthTool\SpotifyAuthToolServiceProvider"
 
 php artisan migrate
+```
+
+5. Register the following redirect URI in your [Spotify app](https://developer.spotify.com):
+
+```
+<APP_URL>/nova-vendor/nova-spotify-auth-tool/auth
 ```
 
 ## Changelog
