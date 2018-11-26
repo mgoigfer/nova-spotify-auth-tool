@@ -2,6 +2,10 @@
 
 All notable changes to `nova-spotify-auth-tool` will be documented in this file.
 
+## 0.2.0 - 2018-11-27
+
+- Refactor methods.
+
 ## 0.1.5 - 2018-11-26
 
 - Spotify Facade.

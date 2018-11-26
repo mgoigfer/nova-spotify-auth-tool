@@ -20,30 +20,24 @@ class SpotifyAuthToolController extends Controller
      */
     public function auth()
     {
-        $spotify = app()->make('SpotifyWrapper', [
-            'callback' => '/nova-vendor/nova-spotify-auth-tool/auth',
-            'scope' => [],
-            'show_dialog' => true,
-        ]);
+        $spotify = app()
+            ->make('SpotifyWrapper', [
+                'callback' => '/nova-vendor/nova-spotify-auth-tool/auth',
+                'scope' => [],
+                'show_dialog' => true,
+            ])
+            ->requestAccessToken();
 
-        // Request an access token. The user will be redirected to Spotify to
-        // approve the Spotify app.
-        $accessToken = $spotify->requestAccessToken();
-
-        // Authenticate Spotify API.
-        $spotify->api->setAccessToken($accessToken);
-
-        $me = $spotify->api->me();
-        $refresh_token = $spotify->session->getRefreshToken();
+        $spotify->api->setAccessToken($spotify->session->getAccessToken());
 
         Spotify::updateOrCreate(
             ['key' => 'user_id'],
-            ['value' => $me->id]
+            ['value' => $spotify->api->me()->id]
         );
 
         Spotify::updateOrCreate(
             ['key' => 'refresh_token'],
-            ['value' => $refresh_token]
+            ['value' => $spotify->session->getRefreshToken()]
         );
 
         return redirect('nova/nova-spotify-auth-tool');
@@ -62,9 +56,7 @@ class SpotifyAuthToolController extends Controller
      */
     public function getUserId()
     {
-        $userId = Spotify::userId();
-
-        return response()->json($userId);
+        return response()->json(Spotify::userId());
     }
 
     /**
@@ -74,8 +66,6 @@ class SpotifyAuthToolController extends Controller
      */
     public function getRefreshToken()
     {
-        $refreshToken = Spotify::refreshToken();
-
-        return response()->json($refreshToken);
+        return response()->json(Spotify::refreshToken());
     }
 }
