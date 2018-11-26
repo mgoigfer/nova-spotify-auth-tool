@@ -2,11 +2,17 @@
 
 namespace Mgoigfer\SpotifyAuthTool\Http\Controllers;
 
-use DB;
 use Illuminate\Routing\Controller;
+use Mgoigfer\SpotifyAuthTool\Models\Spotify;
 
 class SpotifyAuthToolController extends Controller
 {
+    /*
+    |--------------------------------------------------------------------------
+    | Web
+    |--------------------------------------------------------------------------
+    */
+
     /**
      * Spotify authentication.
      *
@@ -20,19 +26,56 @@ class SpotifyAuthToolController extends Controller
             'show_dialog' => true,
         ]);
 
-        $refresh_token = $spotify->requestRefreshToken();
+        // Request an access token. The user will be redirected to Spotify to
+        // approve the Spotify app.
+        $accessToken = $spotify->requestAccessToken();
 
-        if (DB::table('spotify')->where('key', 'refresh_token')->first()) {
-            DB::table('spotify')->where('key', 'refresh_token')->update([
-                'value' => $refresh_token,
-            ]);
-        } else {
-            DB::table('spotify')->insert([
-                'key' => 'refresh_token',
-                'value' => $refresh_token,
-            ]);
-        }
+        // Authenticate Spotify API.
+        $spotify->api->setAccessToken($accessToken);
+
+        $me = $spotify->api->me();
+        $refresh_token = $spotify->session->getRefreshToken();
+
+        Spotify::updateOrCreate(
+            ['key' => 'user_id'],
+            ['value' => $me->id]
+        );
+
+        Spotify::updateOrCreate(
+            ['key' => 'refresh_token'],
+            ['value' => $refresh_token]
+        );
 
         return redirect('nova/nova-spotify-auth-tool');
+    }
+
+    /*
+    |--------------------------------------------------------------------------
+    | API
+    |--------------------------------------------------------------------------
+    */
+
+    /**
+     * Get Spotify user ID.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getUserId()
+    {
+        $userId = Spotify::userId();
+
+        return response()->json($userId);
+    }
+
+    /**
+     * Get refresh token.
+     *
+     * @return \Illuminate\Http\JsonResponse
+     */
+    public function getRefreshToken()
+    {
+        $refreshToken = Spotify::refreshToken();
+
+        return response()->json($refreshToken);
     }
 }

@@ -8,12 +8,22 @@
           class="btn btn-default btn-primary"
           @click="requestSpotifyRefreshToken"
         >
-          Obtener Spotify Refresh Token
+          Request Spotify Refresh Token
         </button>
       </span>
     </div>
 
     <card class="p-4">
+      <p class="mb-4 font-bold">
+        User ID:
+      </p>
+
+      <p style="overflow-wrap: break-word;">
+        {{ userId }}
+      </p>
+
+      <br>
+
       <p class="mb-4 font-bold">
         Refresh Token:
       </p>
@@ -32,16 +42,22 @@ export default {
   data() {
     return {
       refreshToken: '',
+      userId: '',
     };
   },
 
   mounted() {
+    this.getUserId();
     this.getRefreshToken();
   },
 
   methods: {
     async getRefreshToken() {
       ({ data: this.refreshToken } = await Nova.request().get('/nova-vendor/nova-spotify-auth-tool/refresh-token'));
+    },
+
+    async getUserId() {
+      ({ data: this.userId } = await Nova.request().get('/nova-vendor/nova-spotify-auth-tool/user-id'));
     },
 
     requestSpotifyRefreshToken() {

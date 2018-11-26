@@ -4,6 +4,7 @@ All notable changes to `nova-spotify-auth-tool` will be documented in this file.
 
 ## 0.1.4 - 2018-11-26
 
+- Request Spotify user ID.
 - Force the user to approve the Spotify app.
 - Update README.
 

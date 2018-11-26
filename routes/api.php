@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use Mgoigfer\SpotifyAuthTool\Http\Controllers\SpotifyAuthToolController;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,4 +14,5 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/refresh-token', 'Mgoigfer\SpotifyAuthTool\Http\Controllers\SpotifyAuthToolApiController@getRefreshToken');
+Route::get('/user-id', SpotifyAuthToolController::class.'@getUserId');
+Route::get('/refresh-token', SpotifyAuthToolController::class.'@getRefreshToken');
