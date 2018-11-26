@@ -46,6 +46,17 @@ php artisan migrate
 <APP_URL>/nova-vendor/nova-spotify-auth-tool/auth
 ```
 
+## Usage
+
+To get the Spotify user ID and the refresh token stored in the database:
+
+```php
+use Mgoigfer\SpotifyAuthTool\Facades\Spotify;
+
+$userId = Spotify::userId();
+$refreshToken = Spotify::refreshToken();
+```
+
 ## Changelog
 
 Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
